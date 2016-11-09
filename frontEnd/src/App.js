@@ -60,7 +60,9 @@ onSearch(e){
                                 left: (leftValue + 100) *(i+1)
                             }
                              return(
-                            <div style={style} className="round"></div>)
+                            <div style={style} className="round">
+                                <span className="label">{item} °C</span>
+                            </div>)
                         })}
                     
 
