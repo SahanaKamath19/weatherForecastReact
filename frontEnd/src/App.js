@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header'
+import Search from './Search'
 import axios from 'axios'
 class App extends Component {
 constructor(){
@@ -28,8 +29,13 @@ componentWillMount(){
             console.log(newDate.substring(0,15));
       }
     return (
-      <Header />
-
+        <div>
+         <Header />
+            <div className="container">
+                <Search />
+            </div>
+        </div>
+         
     );
   }
 }
