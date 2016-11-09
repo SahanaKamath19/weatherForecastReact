@@ -7,7 +7,7 @@ class Search extends Component {
                 <div className="input-group">
                     <input type="text" className="form-control" placeholder="Search for Cities"/>
                 <span className="input-group-btn">
-                    <button className="btn btn-default button" type="button">Search!</button>
+                    <button className="btn btn-default button" type="button" onClick={this.props.onSearch}>Search!</button>
                 </span>
                 </div>
             </div>

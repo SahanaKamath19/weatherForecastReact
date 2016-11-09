@@ -20,6 +20,12 @@ componentWillMount(){
         })
     })
 }
+
+onSearch(e){
+    e.preventDefault();
+    console.log("Send the City value to the server");
+}
+
   render() {
       if(this.state.loading){
           return<div>Loading........</div>
@@ -32,7 +38,7 @@ componentWillMount(){
         <div>
          <Header />
             <div className="container">
-                <Search />
+                <Search onSearch={this.onSearch}/>
             </div>
         </div>
          
