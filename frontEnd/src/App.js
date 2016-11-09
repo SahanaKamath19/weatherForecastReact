@@ -20,6 +20,12 @@ componentWillMount(){
         })
     })
 }
+
+onSearch(e){
+    e.preventDefault();
+    console.log("Send the City value to the server");
+}
+
   render() {
       if(this.state.loading){
           return<div>Loading........</div>
@@ -31,8 +37,11 @@ componentWillMount(){
     return (
         <div>
          <Header />
-            <div className="container">
-                <Search />
+            <div className="row container">
+                <Search onSearch={this.onSearch}/>
+            </div>
+            <div className="graphContainer">
+            
             </div>
         </div>
          
