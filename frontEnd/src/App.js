@@ -40,6 +40,9 @@ onSearch(e){
             <div className="container">
                 <Search onSearch={this.onSearch}/>
             </div>
+            <div className="graphContainer">
+            
+            </div>
         </div>
          
     );
