@@ -43,6 +43,10 @@ onSearch(e){
                     <div className="first round"></div>
                     <div className="second round"></div>
                     <div className="third round"></div>
+                    <div className="four round"></div>
+                    <div className="five round"></div>
+                    <div className="six round"></div>
+                    <div className="seven round"></div>
                 </div>
             </div>
             
