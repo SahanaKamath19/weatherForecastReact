@@ -44,12 +44,10 @@ onSearch(e){
                     <div className="second round"></div>
                     <div className="third round"></div>
                     <div className="four round"></div>
-<<<<<<< HEAD
-=======
                     <div className="five round"></div>
                     <div className="six round"></div>
                     <div className="seven round"></div>
->>>>>>> e653b2c64ce5429719a0731f60e0f75c95650e30
+
                 </div>
             </div>
             
