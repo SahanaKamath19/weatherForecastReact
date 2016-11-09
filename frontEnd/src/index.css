@@ -10,49 +10,20 @@ body {
   background-color: #E8B40C;
 }
 .graphContainer{
-  height:400px;
+  height:150px;
   background-color: lightgrey;
   margin-top: 30px;
   position:relative;
 }
 
 .round{
-  width:30px;
-  height:30px;
-  border-radius: 15px;
+  width:8px;
+  height:8px;
+  border-radius: 4px;
   background-color:#E8B40C;
   position:absolute; 
   bottom:0px;
+  
 }
 
-.first{
-  margin-left: 40px;
 
-}
-
-.second{
-  margin-left: 80px;
-
-}
-
-.third{
-   margin-left: 120px;
-
-}
-
-.four{
-   margin-left: 160px;
-
-}
-
-.five{
-  margin-left: 200px;
-
-}
-.six{
-  margin-left: 240px;
-
-}
-.seven{
-  margin-left: 280px;
-}

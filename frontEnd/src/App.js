@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Search from './Search'
 import axios from 'axios'
+
+
 class App extends Component {
 constructor(){
     super();
     this.state={
         data:'',
-        loading:true
+        loading:true,
+        temp:''
     }
 }
 
@@ -16,8 +19,13 @@ componentWillMount(){
         //console.log(res);
         this.setState({
             data:res.data,
+            temp:res.data.map((item)=>{
+                return item.temp
+            }),
             loading:false
+            
         })
+
     })
 }
 
@@ -27,26 +35,34 @@ onSearch(e){
 }
 
   render() {
+     
       if(this.state.loading){
           return<div>Loading........</div>
       }else{
-            let date =this.state.data[0].date;
-            let newDate = Date(date);
-            console.log(newDate.substring(0,15));
+            // let date =this.state.data[0].date;
+            // let newDate = Date(date);
+            // console.log(newDate.substring(0,15));
+            // console.log(this.state.data[0].temp);
+        console.log(this.state.temp);
       }
+      let dataSet =  this.state.temp;
+      let leftValue = dataSet.length;
     return (
         <div>
          <Header />
             <div className="container">
                 <Search onSearch={this.onSearch}/>
                 <div className="graphContainer">
-                    <div className="first round"></div>
-                    <div className="second round"></div>
-                    <div className="third round"></div>
-                    <div className="four round"></div>
-                    <div className="five round"></div>
-                    <div className="six round"></div>
-                    <div className="seven round"></div>
+                    
+                    { dataSet.map((item, i)=>{
+                            let style = {
+                                bottom: item-4,
+                                left: (leftValue + 100) *(i+1)
+                            }
+                             return(
+                            <div style={style} className="round"></div>)
+                        })}
+                    
 
                 </div>
             </div>
