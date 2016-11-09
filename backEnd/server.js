@@ -2,8 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const request =  require('request');
 const app = express();
-
-url = 'http://api.openweathermap.org/data/2.5/forecast/city?id=6167863&APPID=517985c009ccca68942debb4afe4feb2';
+let city = "Delhi";
+url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
 
 // app.get('/', (req,res) => {
 //     request(url, (error,response,body)=>{})
@@ -34,3 +34,13 @@ app.listen(8080, () => {
 	console.log('Server Started on http://localhost:8011');
 	console.log('Press CTRL + C to stop server');
 });
+
+
+//Use this API for getting temp in degree C. Access the temp by city name
+//Space is allowed for places like New york etc.
+//http://api.openweathermap.org/data/2.5/forecast?q=Toronto&units=metric&APPID=517985c009ccca68942debb4afe4feb2
+
+//http://api.openweathermap.org/data/2.5/forecast/daily?q=Toronto,ca&APPID=517985c009ccca68942debb4afe4feb2
+//http://api.openweathermap.org/data/2.5/forecast?q=Toronto,ca&APPID=517985c009ccca68942debb4afe4feb2
+
+//try Accessing sunrise and sunset time 
