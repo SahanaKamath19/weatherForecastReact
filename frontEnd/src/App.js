@@ -61,7 +61,7 @@ onSearch(e){
                             }
                              return(
                             <div style={style} className="round">
-                                <span className="label">{item.temper} °C  {item.dateReturn}</span>
+                                <span className="label">{item.temper} °C  {(new Date(item.dateReturn*1000)).toString().substr(0,10)}</span>
                             </div>)
                         })}
                     
