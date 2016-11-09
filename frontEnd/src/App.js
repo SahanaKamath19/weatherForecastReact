@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './Header'
+import Search from './Search'
+import axios from 'axios'
 class App extends Component {
+constructor(){
+    super();
+    this.state={
+        data:'',
+        loading:true
+    }
+}
+
+componentWillMount(){
+    axios.get('http://localhost:8080/').then((res)=>{
+        //console.log(res);
+        this.setState({
+            data:res.data,
+            loading:false
+        })
+    })
+}
   render() {
+      if(this.state.loading){
+          return<div>Loading........</div>
+      }else{
+            let date =this.state.data[0].date;
+            let newDate = Date(date);
+            console.log(newDate.substring(0,15));
+      }
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div>
+         <Header />
+            <div className="container">
+                <Search />
+            </div>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+         
     );
   }
 }
