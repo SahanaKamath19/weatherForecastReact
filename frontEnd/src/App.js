@@ -37,7 +37,7 @@ onSearch(e){
     return (
         <div>
          <Header />
-            <div className="row container">
+            <div className="container">
                 <Search onSearch={this.onSearch}/>
             </div>
             <div className="graphContainer">
