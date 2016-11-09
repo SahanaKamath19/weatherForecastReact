@@ -12,6 +12,8 @@ constructor(){
         loading:true,
         temp:''
     }
+
+    this.showDescription=this.showDescription.bind(this);
 }
 
 componentWillMount(){
@@ -32,6 +34,10 @@ componentWillMount(){
 onSearch(e){
     e.preventDefault();
     console.log("Send the City value to the server");
+}
+
+showDescription(item){
+console.log(item);
 }
 
   render() {
@@ -60,7 +66,7 @@ onSearch(e){
                                 left: (leftValue + 110) *(i+1)
                             }
                              return(
-                            <div style={style} className="round">
+                            <div key={i} style={style} className="round" onClick={()=>this.showDescription(item)}>
                                 <span className="label">{item.temper} °C  {(new Date(item.dateReturn*1000)).toString().substr(0,10)}</span>
                             </div>)
                         })}
