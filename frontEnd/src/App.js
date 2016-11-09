@@ -20,7 +20,7 @@ componentWillMount(){
         this.setState({
             data:res.data,
             temp:res.data.map((item)=>{
-                return item.temp
+                return {"temper":item.temp,"dateReturn":item.date};
             }),
             loading:false
             
@@ -43,7 +43,7 @@ onSearch(e){
             // let newDate = Date(date);
             // console.log(newDate.substring(0,15));
             // console.log(this.state.data[0].temp);
-        console.log(this.state.temp);
+        //console.log(this.state.temp);
       }
       let dataSet =  this.state.temp;
       let leftValue = dataSet.length;
@@ -56,12 +56,12 @@ onSearch(e){
                     
                     { dataSet.map((item, i)=>{
                             let style = {
-                                bottom: item-4,
-                                left: (leftValue + 100) *(i+1)
+                                bottom: item.temper-4,
+                                left: (leftValue + 110) *(i+1)
                             }
                              return(
                             <div style={style} className="round">
-                                <span className="label">{item} °C</span>
+                                <span className="label">{item.temper} °C  {item.dateReturn}</span>
                             </div>)
                         })}
                     
