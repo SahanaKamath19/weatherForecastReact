@@ -30,7 +30,7 @@ app.get('/', (req,res) => {
                     "description":list[i].weather[0].description
                 });
             }
-            //console.log(weather);
+            console.log(weather);
             res.json(weather)
         }
  
@@ -63,3 +63,4 @@ app.listen(8080, () => {
 //                     "icon":list[i].weather[0].icon,
 //                     "description":list[i].weather[0].description
 //                 });
+
