@@ -39,10 +39,13 @@ onSearch(e){
          <Header />
             <div className="container">
                 <Search onSearch={this.onSearch}/>
+                <div className="graphContainer">
+                    <div className="first round"></div>
+                    <div className="second round"></div>
+                    <div className="third round"></div>
+                </div>
             </div>
-            <div className="graphContainer">
             
-            </div>
         </div>
          
     );
