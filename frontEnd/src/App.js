@@ -5,6 +5,7 @@ import  Description from './descriptionTab'
 import axios from 'axios'
 
 
+
 class App extends Component {
 constructor(){
     super();
@@ -13,7 +14,8 @@ constructor(){
         loading:true,
         temp:'',
         city:'Toronto',
-        description:''
+        description:'',
+        status:false
     }
 
     this.showDescription=this.showDescription.bind(this);
@@ -46,7 +48,8 @@ let filterValue = this.state.data.filter((data)=>{
     return item.temper===data.temp 
 })
 this.setState({
-    description:filterValue
+    description:filterValue[0],
+    status:true
 })
 }
 
@@ -81,7 +84,7 @@ handleSearch(){
                             </div>)
                         })}
                 </div>
-                <Description description={this.state.description}/>
+                <Description description={this.state.description} />
             </div>
             
         </div>

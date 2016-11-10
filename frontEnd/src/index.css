@@ -35,6 +35,8 @@ body {
 .descriptionTabStyle{
   background: #E8B40C;
   color: white;
+  padding: 1px;
+  margin: 12px;
 }
 
 
