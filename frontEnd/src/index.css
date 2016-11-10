@@ -44,10 +44,34 @@ body {
   color: white;
   padding: 1px;
   margin: 12px;
+  position: relative;
 }
 
 .sun{
   right: 0px;
   position: absolute;
+}
+
+.closeButton{
+  right: 5px;
+  position: absolute;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+.closeButton:focus{
+  outline: none;
+}
+.description{
+  display: inline-block;
+}
+.descriptionIcon{
+  width:100px;
+  height:100px;
+  background: black;
+  float: right;
+  right:10px;
+  margin-right: 40px;
 }
 

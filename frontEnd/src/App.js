@@ -21,6 +21,7 @@ constructor(){
     this.showDescription=this.showDescription.bind(this);
     this.handleChange=this.handleChange.bind(this);
     this.handleSearch=this.handleSearch.bind(this);
+    this.handleClose=this.handleClose.bind(this);
 }
 
 componentDidMount(){
@@ -54,7 +55,6 @@ let filterValue = this.state.data.filter((data)=>{
 
 }
 
-//send the searched value to server using handleSearch function
 handleSearch(){
     console.log(this.state.city);
     axios.post("http://localhost:8080/city",this.state).then((res)=>{
@@ -65,6 +65,12 @@ handleSearch(){
             }),
             loading:false
         })
+    })
+}
+
+handleClose(){
+    this.setState({
+    status:false
     })
 }
 
@@ -99,7 +105,7 @@ handleSearch(){
                 <img src={snowMan} className="Header-logo" alt="logo" />
                 </div>
                 <div id="description">
-                { this.state.status ? <Description description={this.state.description}/> : null }
+                { this.state.status ? <Description description={this.state.description} handleClose={this.handleClose}/> : null }
                 
                 </div>
             </div>
