@@ -1,17 +1,26 @@
 const express = require('express');
 const axios = require('axios');
 const request =  require('request');
+const bodyParser = require('body-parser');
 const app = express();
  
+app.use(bodyParser.json());
+
 app.use(function(req, res, next) {
  res.header("Access-Control-Allow-Origin", "*");
  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
  next();
 });
 
-let city = "Toronto";
-url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ city +"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
-//url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
+//Write the function to change the city value and call the API
+// app.post('/city', (req,res) => {   
+// 	city =req.body;
+//   //res.send("Done!");
+// })
+
+let city="Toronto";
+ url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ city +"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
+// //url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
 
 app.get('/', (req,res) => {
     request(url, function (error, response, body) {

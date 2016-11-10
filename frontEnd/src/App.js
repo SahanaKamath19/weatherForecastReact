@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import Search from './Search'
+import  Description from './descriptionTab'
 import axios from 'axios'
 
 
@@ -11,7 +12,8 @@ constructor(){
         data:'',
         loading:true,
         temp:'',
-        city:'Toronto'
+        city:'Toronto',
+        description:''
     }
 
     this.showDescription=this.showDescription.bind(this);
@@ -28,14 +30,11 @@ componentDidMount(){
                 return {"temper":item.temp,"dateReturn":item.date};
             }),
             loading:false
-            
         })
 
     })
 }
-componentDidUpdate(){
-    
-}
+
 handleChange(e){
     this.setState({
         city:e.target.value
@@ -43,15 +42,22 @@ handleChange(e){
 }
 
 showDescription(item){
-console.log(item);
+let filterValue = this.state.data.filter((data)=>{
+    return item.temper===data.temp 
+})
+this.setState({
+    description:filterValue
+})
 }
 
+//send the searched value to server using handleSearch function
 handleSearch(){
     console.log(this.state.city);
+    //axios.post("http://localhost:8080/city",this.state.city); 
 }
 
   render() {
-     
+     console.log(this.state.description);
       if(this.state.loading){
           return<div>Loading........</div>
       }
@@ -74,9 +80,8 @@ handleSearch(){
                                 <span className="label">{item.temper} °C  {(new Date(item.dateReturn*1000)).toString().substr(0,10)}</span>
                             </div>)
                         })}
-                    
-
                 </div>
+                <Description description={this.state.description}/>
             </div>
             
         </div>
