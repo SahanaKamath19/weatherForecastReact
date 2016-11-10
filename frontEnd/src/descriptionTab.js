@@ -8,6 +8,7 @@ class Description extends Component {
             <div className="descriptionTabStyle" id="tabVisible">
             <button className="closeButton" onClick={this.props.handleClose}>CLOSE X</button>
                 <h2 className="text-center">Date: {date} <img src={"http://openweathermap.org/img/w/"+this.props.description.icon+".png"}/></h2> 
+                <div className="description">
                 <ul>
                     <li>Temperature: {this.props.description.temp} °C</li>
                     <li>Minimum Temperature: {this.props.description.tempMin} °C</li>
@@ -15,6 +16,10 @@ class Description extends Component {
                     <li>Humidity: {this.props.description.humidity}%</li>
                     <li>Description: {this.props.description.description}</li>
                 </ul>
+                </div>
+                <div className="descriptionIcon">
+                
+                </div>
             </div>
         )
     }

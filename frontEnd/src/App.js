@@ -55,7 +55,6 @@ let filterValue = this.state.data.filter((data)=>{
 
 }
 
-//send the searched value to server using handleSearch function
 handleSearch(){
     console.log(this.state.city);
     axios.post("http://localhost:8080/city",this.state).then((res)=>{

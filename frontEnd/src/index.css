@@ -63,4 +63,15 @@ body {
 .closeButton:focus{
   outline: none;
 }
+.description{
+  display: inline-block;
+}
+.descriptionIcon{
+  width:100px;
+  height:100px;
+  background: black;
+  float: right;
+  right:10px;
+  margin-right: 40px;
+}
 
