@@ -18,7 +18,7 @@ class Description extends Component {
                 </ul>
                 </div>
                 <div className="descriptionIcon">
-                
+                    
                 </div>
             </div>
         )
