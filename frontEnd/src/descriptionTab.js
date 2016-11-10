@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
+import umbrella from './umbrella.svg';
 
 class Description extends Component {
+    
+        constructor(){
+            super();
+            this.state={
+                icon:''
+            }
+        }
+        componentWillMount(){
+             if(this.props.description.description=="light rain"){
+                 this.setState({
+                     icon:umbrella
+                 })
+            }
+        }
+    
     render(){
         let item = this.props.description.date;
         let date = (new Date(item*1000)).toString().substr(0,10);
@@ -18,7 +34,7 @@ class Description extends Component {
                 </ul>
                 </div>
                 <div className="descriptionIcon">
-                
+                     <img src={this.state.icon} className="Header-logo" alt="logo" /> 
                 </div>
             </div>
         )
