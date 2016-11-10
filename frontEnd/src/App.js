@@ -84,7 +84,9 @@ handleSearch(){
                             </div>)
                         })}
                 </div>
-                <Description description={this.state.description} />
+                <div id="description">
+                <Description description={this.state.description}/>
+                </div>
             </div>
             
         </div>
