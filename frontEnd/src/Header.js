@@ -8,7 +8,7 @@ class Header extends Component {
       <div className="Header">
         <div className="Header-header">
           <img src={logo} className="Header-logo" alt="logo" />
-          <h2>Weather App</h2>
+          <h2>Weather Of {this.props.city}</h2>
         </div>
       </div>
     );

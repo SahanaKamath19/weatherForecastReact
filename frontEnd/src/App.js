@@ -10,13 +10,16 @@ constructor(){
     this.state={
         data:'',
         loading:true,
-        temp:''
+        temp:'',
+        city:'Toronto'
     }
 
     this.showDescription=this.showDescription.bind(this);
+    this.handleChange=this.handleChange.bind(this);
+    this.handleSearch=this.handleSearch.bind(this);
 }
 
-componentWillMount(){
+componentDidMount(){
     axios.get('http://localhost:8080/').then((res)=>{
         //console.log(res);
         this.setState({
@@ -30,34 +33,35 @@ componentWillMount(){
 
     })
 }
-
-onSearch(e){
-    e.preventDefault();
-    console.log("Send the City value to the server");
+componentDidUpdate(){
+    
+}
+handleChange(e){
+    this.setState({
+        city:e.target.value
+    })
 }
 
 showDescription(item){
 console.log(item);
 }
 
+handleSearch(){
+    console.log(this.state.city);
+}
+
   render() {
      
       if(this.state.loading){
           return<div>Loading........</div>
-      }else{
-            // let date =this.state.data[0].date;
-            // let newDate = Date(date);
-            // console.log(newDate.substring(0,15));
-            // console.log(this.state.data[0].temp);
-        //console.log(this.state.temp);
       }
       let dataSet =  this.state.temp;
       let leftValue = dataSet.length;
     return (
         <div>
-         <Header />
+         <Header city={this.state.city}/>
             <div className="container">
-                <Search onSearch={this.onSearch}/>
+                <Search handleChange={this.handleChange} handleSearch={this.handleSearch}/>
                 <div className="graphContainer">
                     
                     { dataSet.map((item, i)=>{
