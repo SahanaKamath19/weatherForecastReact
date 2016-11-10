@@ -7,12 +7,18 @@ body {
   margin-top:30px;
 }  
 .button{
-  background-color: #E8B40C;
+  background-color: #FCB000;
 }
-.graphContainer{
-  height:150px;
+.graphContainerPositive{
+  height:80px;
   background-color: #222;
   margin-top: 30px;
+  position:relative;
+}
+
+.graphContainerNegitive{
+  height:80px;
+  background-color:darkgray;
   position:relative;
 }
 
@@ -20,7 +26,7 @@ body {
   width:8px;
   height:8px;
   border-radius: 4px;
-  background-color:#E8B40C;
+  background-color:#FCB000;
   position:absolute; 
   bottom:0px;
   
@@ -33,7 +39,7 @@ body {
 }
 
 .descriptionTabStyle{
-  background: #E8B40C;
+  background: #FCB000;
   color: white;
   padding: 1px;
   margin: 12px;

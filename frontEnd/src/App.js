@@ -79,8 +79,9 @@ handleSearch(){
         <div>
          <Header city={this.state.city}/>
             <div className="container">
-                <Search handleChange={this.handleChange} handleSearch={this.handleSearch}/>
-                <div className="graphContainer">
+             <Search handleChange={this.handleChange} handleSearch={this.handleSearch}/>
+            <div>
+                <div className="graphContainerPositive">
                     
                     { dataSet.map((item, i)=>{
                             let style = {
@@ -93,12 +94,15 @@ handleSearch(){
                             </div>)
                         })}
                 </div>
+                <div className="graphContainerNegitive">
+               
+                </div>
                 <div id="description">
                 { this.state.status ? <Description description={this.state.description}/> : null }
                 
                 </div>
             </div>
-            
+            </div>
         </div>
          
     );
