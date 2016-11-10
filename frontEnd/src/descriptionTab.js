@@ -14,7 +14,6 @@ class Description extends Component {
                     <li>Maximum Temperature: {this.props.description.tempMax} °C</li>
                     <li>Humidity: {this.props.description.humidity}%</li>
                     <li>Description: {this.props.description.description}</li>
-              
                 </ul>
             </div>
         )
