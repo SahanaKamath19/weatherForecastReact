@@ -3,8 +3,8 @@ import Header from './Header'
 import Search from './Search'
 import  Description from './descriptionTab'
 import axios from 'axios'
-
-
+import snowMan from './happy-snowman.svg';
+import sun from './sun.svg';
 
 class App extends Component {
 constructor(){
@@ -93,9 +93,10 @@ handleSearch(){
                                 <span className="label">{item.temper} °C  {(new Date(item.dateReturn*1000)).toString().substr(0,10)}</span>
                             </div>)
                         })}
+                    <img src={sun} className="sun Header-logo" alt="logo" />  
                 </div>
                 <div className="graphContainerNegitive">
-               
+                <img src={snowMan} className="Header-logo" alt="logo" />
                 </div>
                 <div id="description">
                 { this.state.status ? <Description description={this.state.description}/> : null }

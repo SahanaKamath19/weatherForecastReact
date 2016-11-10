@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './temperature.svg';
+import temp from './temperature.svg';
 import './header.css';
 
 class Header extends Component {
@@ -7,7 +7,7 @@ class Header extends Component {
     return (
       <div className="Header">
         <div className="Header-header">
-          <img src={logo} className="Header-logo" alt="logo" />
+          <img src={temp} className="Header-logo" alt="logo" />
           <h2>Weather Of {this.props.city}</h2>
         </div>
       </div>

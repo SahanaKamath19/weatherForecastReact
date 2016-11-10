@@ -18,8 +18,9 @@ body {
 
 .graphContainerNegitive{
   height:80px;
-  background-color:darkgray;
+  background-color:#4d4d4d;
   position:relative;
+  z-index: -1;
 }
 
 .round{
@@ -45,4 +46,8 @@ body {
   margin: 12px;
 }
 
+.sun{
+  right: 0px;
+  position: absolute;
+}
 
