@@ -21,6 +21,7 @@ constructor(){
     this.showDescription=this.showDescription.bind(this);
     this.handleChange=this.handleChange.bind(this);
     this.handleSearch=this.handleSearch.bind(this);
+    this.handleClose=this.handleClose.bind(this);
 }
 
 componentDidMount(){
@@ -68,6 +69,12 @@ handleSearch(){
     })
 }
 
+handleClose(){
+    this.setState({
+    status:false
+    })
+}
+
   render() {
      console.log(this.state.description);
       if(this.state.loading){
@@ -99,7 +106,7 @@ handleSearch(){
                 <img src={snowMan} className="Header-logo" alt="logo" />
                 </div>
                 <div id="description">
-                { this.state.status ? <Description description={this.state.description}/> : null }
+                { this.state.status ? <Description description={this.state.description} handleClose={this.handleClose}/> : null }
                 
                 </div>
             </div>
