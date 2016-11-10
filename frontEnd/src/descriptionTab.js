@@ -9,10 +9,14 @@ class Description extends Component {
                 icon:''
             }
         }
-        componentWillMount(){
-             if(this.props.description.description=="light rain"){
+        componentWillUpdate(){
+             if((this.props.description.description).includes("rain")||(this.props.description.description).includes("cloud")){
                  this.setState({
                      icon:umbrella
+                 })
+            }  else{
+                this.setState({
+                     icon:""
                  })
             }
         }
