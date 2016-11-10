@@ -15,7 +15,8 @@ constructor(){
         temp:'',
         city:'Toronto',
         description:'',
-        status:false
+        status:false,
+        icon:''
     }
 
     this.showDescription=this.showDescription.bind(this);
@@ -52,18 +53,18 @@ let filterValue = this.state.data.filter((data)=>{
     description:filterValue[0],
     status:true
     })
-
 }
 
 handleSearch(){
-    console.log(this.state.city);
+    //console.log(this.state.city);
     axios.post("http://localhost:8080/city",this.state).then((res)=>{
         this.setState({
             data:res.data,
             temp:res.data.map((item)=>{
                 return {"temper":item.temp,"dateReturn":item.date};
             }),
-            loading:false
+            loading:false,
+            status:false
         })
     })
 }
@@ -75,7 +76,7 @@ handleClose(){
 }
 
   render() {
-     console.log(this.state.description);
+     //console.log(this.state.description);
       if(this.state.loading){
           return<div>Loading........</div>
       }
@@ -92,7 +93,7 @@ handleClose(){
                     { dataSet.map((item, i)=>{
                             let style = {
                                 bottom: item.temper-4,
-                                left: (leftValue + 110) *(i+1)
+                                left: (leftValue+110) *(i+1)
                             }
                              return(
                             <div key={i} style={style} className="round" onClick={()=>this.showDescription(item)}>

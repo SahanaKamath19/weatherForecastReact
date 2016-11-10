@@ -30,6 +30,7 @@ body {
   background-color:#FCB000;
   position:absolute; 
   bottom:0px;
+  cursor:pointer;
   
 }
 
@@ -67,9 +68,6 @@ body {
   display: inline-block;
 }
 .descriptionIcon{
-  width:100px;
-  height:100px;
-  background: black;
   float: right;
   right:10px;
   margin-right: 40px;

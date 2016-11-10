@@ -1,6 +1,59 @@
 import React, { Component } from 'react';
+import umbrella from './umbrella.svg';
+import sunglasses from './sunglasses.svg';
+import jacket from './jacket.svg';
+import sorry from './sorry.svg';
 
 class Description extends Component {
+    
+        constructor(){
+            super();
+            this.state={
+                icon:''
+            }
+            this.changeIcon = this.changeIcon.bind(this)
+        }
+        
+        changeIcon(callback){
+           //let name;
+            if((this.props.description.description).includes("rain")||(this.props.description.description).includes("cloud")){
+                this.setState({
+                   icon:umbrella
+               })
+            }else if ((this.props.description.description).includes("sun")|| (this.props.description.description).includes("sky"))
+            {
+                this.setState({
+                    icon: sunglasses
+                })
+            }
+            else if ((this.props.description.description).includes("snow")|| (this.props.description.description).includes("wind"))
+            {
+                this.setState({
+                    icon: jacket
+                })
+            }
+              else{
+               this.setState({
+                   icon:sorry
+               })
+            }
+            callback();
+        }
+
+        componentDidUpdate(prevProps){
+            if(prevProps.description !== this.props.description){
+                 this.changeIcon(()=>{
+            });
+            } 
+        }
+
+        componentDidMount(){
+             this.changeIcon(()=>{
+            });
+        }
+    
+       
+
     render(){
         let item = this.props.description.date;
         let date = (new Date(item*1000)).toString().substr(0,10);
@@ -18,7 +71,9 @@ class Description extends Component {
                 </ul>
                 </div>
                 <div className="descriptionIcon">
-                    
+
+                     <img src={this.state.icon} className="descriptionIcon Header-logo" alt="logo" /> 
+
                 </div>
             </div>
         )
