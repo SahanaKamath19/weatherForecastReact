@@ -56,7 +56,15 @@ this.setState({
 //send the searched value to server using handleSearch function
 handleSearch(){
     console.log(this.state.city);
-    //axios.post("http://localhost:8080/city",this.state.city); 
+    axios.post("http://localhost:8080/city",this.state).then((res)=>{
+        this.setState({
+            data:res.data,
+            temp:res.data.map((item)=>{
+                return {"temper":item.temp,"dateReturn":item.date};
+            }),
+            loading:false
+        })
+    })
 }
 
   render() {

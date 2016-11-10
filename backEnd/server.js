@@ -12,20 +12,32 @@ app.use(function(req, res, next) {
  next();
 });
 
-//Write the function to change the city value and call the API
-// app.post('/city', (req,res) => {   
-// 	city =req.body;
-//   //res.send("Done!");
-// })
 
-let city="Toronto";
- url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ city +"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
 // //url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
 
 app.get('/', (req,res) => {
+  let city="Toronto";  
+callRequest(city,(weather)=>{
+res.json(weather);
+});
+
+})
+
+
+app.post('/city', (req,res) => {   
+	let city =req.body.city;
+    console.log(city)
+   callRequest(city,(weather)=>{
+    console.log(weather);
+    res.json(weather);
+    });
+})
+
+
+function callRequest(city,callback){
+    let url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ city +"&units=metric&APPID=517985c009ccca68942debb4afe4feb2";
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-        //    console.log(body);
         var list = JSON.parse(body).list;
         var weather = [];
             for(let i=0;i<list.length;i++){
@@ -39,13 +51,11 @@ app.get('/', (req,res) => {
                     "description":list[i].weather[0].description
                 });
             }
-            console.log(weather);
-            res.json(weather)
+            // console.log(weather);
+            callback(weather);
         }
- 
-    })
-
-})
+    }
+    )}
 
 
 
