@@ -5,7 +5,7 @@ class Description extends Component {
         let item = this.props.description.date;
         let date = (new Date(item*1000)).toString().substr(0,10);
         return(
-            <div className="descriptionTabStyle" >
+            <div className="descriptionTabStyle" id="tabVisible">
                 <h2 className="text-center">Date: {date}</h2>
                 <ul>
                     <li>Temperature: {this.props.description.temp}</li>

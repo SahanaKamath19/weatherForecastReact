@@ -47,10 +47,11 @@ showDescription(item){
 let filterValue = this.state.data.filter((data)=>{
     return item.temper===data.temp 
 })
-this.setState({
+    this.setState({
     description:filterValue[0],
     status:true
-})
+    })
+
 }
 
 //send the searched value to server using handleSearch function
@@ -93,7 +94,8 @@ handleSearch(){
                         })}
                 </div>
                 <div id="description">
-                <Description description={this.state.description}/>
+                { this.state.status ? <Description description={this.state.description}/> : null }
+                
                 </div>
             </div>
             
