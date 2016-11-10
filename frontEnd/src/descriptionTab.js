@@ -6,7 +6,7 @@ class Description extends Component {
         let date = (new Date(item*1000)).toString().substr(0,10);
         return(
             <div className="descriptionTabStyle" id="tabVisible">
-            <p className="closeButton" onClick={this.props.handleClose}>CLOSE</p>
+            <button className="closeButton" onClick={this.props.handleClose}>CLOSE X</button>
                 <h2 className="text-center">Date: {date} <img src={"http://openweathermap.org/img/w/"+this.props.description.icon+".png"}/></h2> 
                 <ul>
                     <li>Temperature: {this.props.description.temp} °C</li>

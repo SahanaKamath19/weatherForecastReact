@@ -57,5 +57,10 @@ body {
   position: absolute;
   height: 30px;
   font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+.closeButton:focus{
+  outline: none;
 }
 
