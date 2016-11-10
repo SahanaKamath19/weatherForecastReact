@@ -93,17 +93,18 @@ handleClose(){
                     { dataSet.map((item, i)=>{
                             let style = {
                                 bottom: item.temper-4,
-                                left: (leftValue+110) *(i+1)
+                                left: (leftValue+100) *(i+1)
                             }
                              return(
                             <div key={i} style={style} className="round" onClick={()=>this.showDescription(item)}>
-                                <span className="label">{item.temper} °C  {(new Date(item.dateReturn*1000)).toString().substr(0,10)}</span>
+                                <span className="label labelOne">{(new Date(item.dateReturn*1000)).toString().substr(0,10)}</span>
+                                <span className="label labelTwo">{item.temper} °C </span>
                             </div>)
                         })}
                     <img src={sun} className="sun Header-logo" alt="logo" />  
                 </div>
                 <div className="graphContainerNegitive">
-                <img src={snowMan} className="Header-logo" alt="logo" />
+                <img src={snowMan} className="snow Header-logo" alt="logo" />
                 </div>
                 <div id="description">
                 { this.state.status ? <Description description={this.state.description} handleClose={this.handleClose}/> : null }

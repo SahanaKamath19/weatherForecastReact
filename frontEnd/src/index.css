@@ -10,14 +10,14 @@ body {
   background-color: #FCB000;
 }
 .graphContainerPositive{
-  height:80px;
+  height:100px;
   background-color: #222;
   margin-top: 30px;
   position:relative;
 }
 
 .graphContainerNegitive{
-  height:80px;
+  height:100px;
   background-color:#4d4d4d;
   position:relative;
   z-index: -1;
@@ -34,12 +34,16 @@ body {
   
 }
 
-.label{
+.labelOne{
   position:absolute;
-  top: -20px;
-  text-align:left;
+  top: -35px;
+  right: -30px;
 }
-
+.labelTwo{
+  position: absolute;
+  top:-20px;
+  right:-20px;
+}
 .descriptionTabStyle{
   background: #FCB000;
   color: white;
@@ -49,7 +53,12 @@ body {
 }
 
 .sun{
-  right: 0px;
+  right: 10px;
+  top:5px;
+  position: absolute;
+}
+.snow{
+  bottom: 5px;
   position: absolute;
 }
 
